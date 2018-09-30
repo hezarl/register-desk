@@ -20,6 +20,7 @@ public class dbconnection {
         {
             Class.forName("com.mysql.jdbc.Driver");
             System.out.println("succeful connection");
+            
         }
         catch (ClassNotFoundException cnfe){
             System.out.println("connection error"+cnfe);
