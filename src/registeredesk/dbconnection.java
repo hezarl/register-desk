@@ -23,6 +23,7 @@ public class dbconnection {
         }
         catch (ClassNotFoundException cnfe){
             System.out.println("connection error"+cnfe);
+            
         }
         String url="jdbc:mysql://localhost:3306/admins?zeroDateTimeBehavior=convertToNull";
         try{
