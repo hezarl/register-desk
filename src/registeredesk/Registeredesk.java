@@ -21,6 +21,10 @@ public class Registeredesk {
         recept.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         recept.setSize(300,370);
         recept.setVisible(true);
+        
+        
+     
+        
     
 
         

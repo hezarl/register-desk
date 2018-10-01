@@ -5,14 +5,14 @@
  */
 package registeredesk;
 import java.awt.FlowLayout;
+import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
-import javax.swing.JFrame;
+import java.sql.SQLException;
 import javax.swing.JLabel;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
@@ -47,14 +47,9 @@ public class login extends JFrame {
         logins=new JTextField();
         logins.setColumns(25);
         pswd=new JPasswordField();
-        pswd.setColumns(25);
-       
+        pswd.setColumns(25);       
         
         loginbtn=new JButton("log in");
-      
-          
-        
-        
         exitbtn=new JButton("exit");
         
        loginlbl.setBounds(50,50,80,20);
@@ -97,6 +92,9 @@ public class login extends JFrame {
                         {
                             JOptionPane.showMessageDialog(null,"login success");
                             homepage home=new homepage();
+                            home.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                            home.setSize(300,370);
+                            home.setVisible(true);
                             con.close();
                         }
                         else
@@ -104,7 +102,7 @@ public class login extends JFrame {
                             JOptionPane.showMessageDialog(null,"invalid user credentials");
                         }
                              }
-                    catch(Exception e)
+                    catch(HeadlessException | ClassNotFoundException | SQLException e)
                     {
                         System.out.println(e);
                     }
@@ -114,4 +112,3 @@ public class login extends JFrame {
                      
     
 
-   
