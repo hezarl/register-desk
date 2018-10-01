@@ -45,15 +45,16 @@ public class homepage extends JFrame  {
            
            logout.addActionListener(new ln());
 }
-            public class ln implements ActionListener
+             public class ln implements ActionListener
+        {
+            @Override
+            public void actionPerformed(ActionEvent de )
             {
-                public void actionPerformed(ActionEvent ad)
-                {
-                    @Override
-                    login lgt=new login
-                            lgt.setSize(300,370);
-                            lgt.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                            lgt.setVisible(true);
+                login fm= new login();
+            fm.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+           fm.setSize(300,370);
+           fm.setVisible(true);
+            
                 }
             }
       }

@@ -108,18 +108,19 @@ public class login extends JFrame {
                     }
                       exitbtn.addActionListener( new ex());
         } 
-                  public class ex implements ActionListener//this gives the button implement instructions when clicked
-               {
-                 public void actionPerformed(ActionEvent be)
-                   {//call on the activity to be performed within the calibraces
-                       login log= new login();
-                        log.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                        log.setSize(300,370);
-                        log.setVisible(true);
+                   public class ex implements ActionListener
+        {
+            @Override
+            public void actionPerformed(ActionEvent kd )
+            {
+                login pt= new login();
+            pt.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+           pt.setSize(300,370);
+           pt.setVisible(true);
+                  
                          }
                      }
-        
-                   }
+        }}
                      
     
 

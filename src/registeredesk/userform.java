@@ -111,6 +111,17 @@ public class userform extends JFrame{
         {
             System.out.println(e);
         }
-        
+             clr.addActionListener(new vn());
     }   
-        }}
+        public class vn implements ActionListener
+        {
+            @Override
+            public void actionPerformed(ActionEvent yg )
+            {
+               userform gv=new userform();
+             gv.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+             gv.setSize(300,370);
+             gv.setVisible(true);  
+            }
+        }        
+}}
