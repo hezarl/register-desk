@@ -13,6 +13,7 @@ import java.sql.SQLException;
  *
  * @author Xerllene Kwamboka
  */
+//establishing a coonection between the project and entire database
 public class dbconnection {
         private Connection dbconnection;
     public Connection connect(){

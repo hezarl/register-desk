@@ -29,6 +29,7 @@ import javax.swing.JOptionPane;
  * @author Xerllene Kwamboka
  */
 public class userform extends JFrame{
+    //initialize the panel variables
     String gen;
     JLabel fname,lsname,telno,age;
     JTextField texta,textb,textc,textd;
@@ -38,8 +39,8 @@ public class userform extends JFrame{
     
     userform()
     {
-        super("Add user");
-        setLayout(new FlowLayout());
+        super("Add user");//name of the frame
+        setLayout(new FlowLayout());//set how it should appear in layout
         
         fname=new JLabel("First Name");
         lsname=new JLabel("Last Name");
@@ -47,20 +48,20 @@ public class userform extends JFrame{
         age=new JLabel("age");
         
         texta=new JTextField();
-        texta.setColumns(20);
+        texta.setColumns(20);//set parameters
         textb=new JTextField();
         textb.setColumns(20);
         textc=new JTextField();
         textc.setColumns(20);
         textd=new JTextField();
         textd.setColumns(20);
-        gena=new JRadioButton("Male",true);
+        gena=new JRadioButton("Male",true);//a buttion to choose either,
         genb=new JRadioButton("Female",false);
         
         
         clr=new JButton("clear");
         save=new JButton("save");
-     
+     //add all the variables to  the panel in correct order
         add(fname);
         add(texta);
         add(lsname);
@@ -73,12 +74,12 @@ public class userform extends JFrame{
         add(save);
         add(gena);
         add(genb);
-        
+        //create a button group to activate the jradiobuttons for selection
         grp=new ButtonGroup();
         grp.add(gena);
         grp.add(genb);
         
-        save.addActionListener(new al());
+        save.addActionListener(new al());//give the save button duty to input data and drag it to background database
     }
         public class al implements ActionListener
       {

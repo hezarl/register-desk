@@ -29,7 +29,7 @@ public class login extends JFrame {
     private static void addActionListener(ActionListener actionListener) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+    //initialize the panel variables
     JLabel loginlbl;
     JLabel pswdlbl;
     JTextField logins;
@@ -51,14 +51,14 @@ public class login extends JFrame {
         
         loginbtn=new JButton("log in");
         exitbtn=new JButton("exit");
-        
+       //set size of the attributes along the axees x,y andd the width and height 
        loginlbl.setBounds(50,50,80,20);
        pswdlbl.setBounds(50,90,80,20);
        logins.setBounds(200,50,80,20);
        pswd.setBounds(150,90,80,20);
        loginbtn.setBounds(150,130,80,20);
        exitbtn.setBounds(150,130,80,20);
-       
+       //add the labels and buttons tothe panel of frame
         add(loginlbl);
         add(logins);
         add(pswdlbl);
@@ -70,7 +70,7 @@ public class login extends JFrame {
     
               loginbtn.addActionListener(new lg());
     }
-        public class lg implements ActionListener
+        public class lg implements ActionListener//give login button activity when clicked
                {
                  @Override
                  public void actionPerformed(ActionEvent be)
@@ -87,7 +87,7 @@ public class login extends JFrame {
                         stmt.setString(2,pswd.getText());
                         
                         ResultSet rs=stmt.executeQuery();
-                        
+                        //creating an if statement to match database info to input inorder to grant access
                         if (rs.next())
                         {
                             JOptionPane.showMessageDialog(null,"login success");
@@ -106,9 +106,20 @@ public class login extends JFrame {
                     {
                         System.out.println(e);
                     }
+                      exitbtn.addActionListener( new ex());
         } 
+                  public class ex implements ActionListener//this gives the button implement instructions when clicked
+               {
+                 public void actionPerformed(ActionEvent be)
+                   {//call on the activity to be performed within the calibraces
+                       login log= new login();
+                        log.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                        log.setSize(300,370);
+                        log.setVisible(true);
                          }
                      }
+        
+                   }
                      
     
 

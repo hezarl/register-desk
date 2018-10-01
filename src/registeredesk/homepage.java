@@ -23,14 +23,14 @@ public class homepage extends JFrame  {
 
         homepage()
 {
-           super("home");
+           super("home");//sper gives the name  to be taken up by the created frame as title
             setLayout(new FlowLayout());
      adduser=new JButton("ADD_USER");
      logout=new JButton("LOG_OUT");
-     
+     //add th buttons to the panel
      add(adduser);
      add(logout);
-     
+     //give the adduser and logout buttons action permission
      adduser.addActionListener(new ad());
 }
         public class ad implements ActionListener
@@ -42,6 +42,20 @@ public class homepage extends JFrame  {
             fom.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
            fom.setSize(300,370);
            fom.setVisible(true);
+           
+           logout.addActionListener(new ln());
 }
-      }}
+            public class ln implements ActionListener
+            {
+                public void actionPerformed(ActionEvent ad)
+                {
+                    @Override
+                    login lgt=new login
+                            lgt.setSize(300,370);
+                            lgt.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                            lgt.setVisible(true);
+                }
+            }
+      }
+}
 
